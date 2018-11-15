@@ -31,6 +31,8 @@ urlpatterns = [
          name='contact'),
 
     path('books/<slug>/', views.book_detail, name='book_detail'),
+    path('books/<slug>/edit/', views.edit_book, name='edit_book'),
+    # path('things/<slug>/edit/', views.edit_thing, name='edit_thing'),
 
     path('admin/', admin.site.urls),
 ]
