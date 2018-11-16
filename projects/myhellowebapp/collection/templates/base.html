@@ -8,17 +8,20 @@
         {% endblock title %}<!-- we want to override page titles -->
         </title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+   
+  <body> 
+   
     {% block header %}
     
     {% endblock header %}
     </head>
 
 
-    <body>
+    
 <!-- as well as override content bits -->
 
         <header>
-                    <h1>Hello Web App</h1> 
+                    <h1>My Books 4 You!</h1> 
             <nav>
                 <ul>
                     <li><a href="{% url 'home' %}">Home</a></li> 

@@ -1,3 +1,30 @@
+
+h1 {
+    font-family: fantasy;
+    font-weight: bolder;
+    color: goldenrod;
+}
+
 body {
-    background-color: cornflowerblue;
-    }
+    
+    background-image: url("http://culture.affinitymagazine.us/wp-content/uploads/2017/05/635873821517718970351055939_Stack-of-books-great-education.jpg");
+    opacity: 0.9;
+    position: absolute;
+    background-size: cover;
+    
+}
+
+p {
+    color: ivory;
+    font-weight: bold; 
+    font-size: 16px
+}
+nav {
+    color: brown;
+}
+
+a {
+
+    color: rgb(193, 188, 52);
+
+}

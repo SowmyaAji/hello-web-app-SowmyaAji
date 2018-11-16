@@ -7,3 +7,4 @@ class Book(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     slug = models.SlugField(unique=True)
+    picture = models.ImageField(upload_to='books/', null=False)

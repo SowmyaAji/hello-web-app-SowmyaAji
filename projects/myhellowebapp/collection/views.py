@@ -4,6 +4,8 @@ from collection.forms import BookForm
 from collection.models import Book
 # Create your views here.
 # Create your views here.
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 def index(request):
@@ -51,3 +53,9 @@ def edit_book(request, slug):
         'book': book,
         'form': form,
     })
+
+
+# def book_picture(request)
+
+
+# picture = collection_book.picture

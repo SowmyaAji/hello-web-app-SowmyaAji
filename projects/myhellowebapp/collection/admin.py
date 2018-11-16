@@ -6,7 +6,7 @@ from collection.models import Book
 
 class BookAdmin(admin.ModelAdmin):
     model = Book
-    list_display = ('name', 'description',)
+    list_display = ('name', 'description', 'picture')
     prepopulated_fields = {'slug': ('name',)}
 
 

@@ -5,7 +5,8 @@
 
         Edit {{ book.name }} - {{ block.super }} 
     
-    
+     
+
     {% endblock title %}
 
 {% block content %}
@@ -14,6 +15,7 @@
 
 
     <form role="form" action="" method="post">
+    
 
         {% csrf_token %}
         {{ form.as_p }}
@@ -21,4 +23,12 @@
         <button type="submit">Submit</button>
     
     </form>
+{% comment %} 
+    <form action="{% url upload_pic %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %} {% endcomment %}
+    {% comment %} <p>
+        <input id="id_image" type="file" class="" name="image">
+    </p>
+    <input type="submit" value="Submit" />
+    </form> {% endcomment %}
 {% endblock %}
