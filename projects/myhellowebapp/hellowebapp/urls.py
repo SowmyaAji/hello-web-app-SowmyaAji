@@ -24,7 +24,8 @@ from django.contrib.auth.views import (PasswordChangeView,
 
 from django.conf.urls.static import static
 from django.conf import settings
-from registration.backends.simple.views import RegistrationView
+from collection.backends import MyRegistrationView
+
 
 urlpatterns = [
     path('', views.index, name='home'),
@@ -52,10 +53,16 @@ urlpatterns = [
     path('accounts/password/done/', PasswordResetCompleteView.as_view(
          template_name='registration/password_reset_complete.html'),
          name="password_reset_complete"),
+
+
+    path('accounts/register/', MyRegistrationView.as_view(),
+         name='registration_register'),
+    path('accounts/create_book/', views.create_book,
+         name='registration_create_book'),
     path('accounts/', include('registration.backends.simple.urls')),
+
+
+
     path('admin/', admin.site.urls),
-    path('accounts/register/', RegistrationView.as_view(),
-         name='registeration_register'),
-    path('accounts/create_bookuser/', RegistrationCreateBookuser.as_view,
-         name='registration_create_bookuser'),
+
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
