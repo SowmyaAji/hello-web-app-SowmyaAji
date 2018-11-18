@@ -14,7 +14,7 @@
     <h1>Edit "{{ book.name }}"</h1>
 
 
-    <form role="form" action="" method="post">
+    <form role="form" action="" method="post" enctype="multipart/form-data">
     
 
         {% csrf_token %}
@@ -22,13 +22,18 @@
 
         <button type="submit">Submit</button>
     
+    
     </form>
-{% comment %} 
-    <form action="{% url upload_pic %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %} {% endcomment %}
-    {% comment %} <p>
-        <input id="id_image" type="file" class="" name="image">
+        
+    {% comment %} <form action="{% book.picture.url %}" method="post" enctype ="multipart/form-data">
+  
+ 
+        {% csrf_token %} 
+    <p>
+        <input id="id_image" type="file" class=" name="image">
     </p>
-    <input type="submit" value="Submit" />
+        <button type="submit">Submit</button>
+   
     </form> {% endcomment %}
+
 {% endblock %}

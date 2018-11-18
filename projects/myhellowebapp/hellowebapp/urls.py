@@ -24,6 +24,7 @@ from django.contrib.auth.views import (PasswordChangeView,
 
 from django.conf.urls.static import static
 from django.conf import settings
+from registration.backends.simple.views import RegistrationView
 
 urlpatterns = [
     path('', views.index, name='home'),
@@ -53,4 +54,8 @@ urlpatterns = [
          name="password_reset_complete"),
     path('accounts/', include('registration.backends.simple.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/register/', RegistrationView.as_view(),
+         name='registeration_register'),
+    path('accounts/create_bookuser/', RegistrationCreateBookuser.as_view,
+         name='registration_create_bookuser'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

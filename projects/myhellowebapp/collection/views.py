@@ -35,19 +35,20 @@ def edit_book(request, slug):
     # grab the object...
     book = Book.objects.get(slug=slug)
 # set the form we're using...
-    form_class = BookForm
     # if we're coming to this view from a submitted form,
     if request.method == 'POST':
+
         # grab the data from the submitted form
-        form = form_class(data=request.POST, instance=book)
+        form = BookForm(data=request.POST, files=request.FILES, instance=book)
 
         if form.is_valid():
             # save the new data
             form.save()
+
             return redirect('book_detail', slug=book.slug)
 
     else:
-        form = form_class(instance=book)
+        form = BookForm(instance=book)
 
     return render(request, 'books/edit_book.html', {
         'book': book,

@@ -19,7 +19,11 @@
         </a></h2>
 
     <p>{{ book.description }}</p>
-   
+    
+    {% if book.picture.url %}
+        <img  src="{{ book.picture.url }}">
+    {% endif %}
+
      {% endfor %}
 
 {% endblock content %}  

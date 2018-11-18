@@ -16,6 +16,7 @@
     <h1>{{ book.name }}</h1>
 
     <p>{{ book.description }}</p>
+    <img class="displaybook" src="{{ book.picture.url }}">
 
     <a href="{% url 'edit_book' slug=book.slug %}"> Edit me!
     </a>
